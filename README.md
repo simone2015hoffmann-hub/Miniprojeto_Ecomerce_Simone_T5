@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Mini E-commerce Project in TypeScript
 
 ## 1. Objetivo
@@ -93,3 +94,6 @@ Os dados são mantidos em memória durante a execução do programa. Ao encerrar
 
 **Estudante:** Simone Hoffmann  
 **Turma:** Turma Back-End Nodev5-Ciclo2
+=======
+# Miniprojeto_Ecomerce_Simone_T5
+>>>>>>> 683ac372a4fee106ed738341f3f6829e8a57932f
