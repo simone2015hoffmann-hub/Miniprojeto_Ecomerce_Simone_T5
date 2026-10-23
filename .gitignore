@@ -1,0 +1,23 @@
+
+# Dependências do Node.js
+node_modules/
+
+# Arquivos gerados pela compilação TypeScript
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Configurações locais
+.env
+.env.*
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Configurações pessoais do VS Code
+.vscode/*
+!.vscode/extensions.json

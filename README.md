@@ -1,6 +1,6 @@
-2026-10-22 12:19:45.872 [info] [Janela] [RemoteAgentHost] Reconciling: desired=[], current=[]
+# # Mini Projeto E-commerce em TypeScript
 
-## 1. Objetivo
+ 1. Objetivo
 
 Desenvolver um sistema simples de gerenciamento de e-commerce utilizando TypeScript e Node.js, aplicando conceitos de programação, organização de módulos, validação de dados e controle de estoque.
 
@@ -28,6 +28,9 @@ Desenvolver um sistema simples de gerenciamento de e-commerce utilizando TypeScr
 ## 4. Estrutura do projeto
 
 ```text
+## Estrutura do Projeto
+
+```text
 ecommerce-typescript/
 ├── src/
 │   ├── types.ts
@@ -36,12 +39,57 @@ ecommerce-typescript/
 │   ├── carrinho.ts
 │   ├── pedidos.ts
 │   ├── relatorios.ts
-│   └── index.ts
+│   ├── index.ts
+│   └── main.ts
 ├── dist/
 ├── package.json
 ├── package-lock.json
 ├── tsconfig.json
 └── README.md
+```
+
+## Arquivo principal
+
+- **main.ts:** arquivo principal de demonstração da aplicação, responsável por executar e demonstrar as funcionalidades do sistema de e-commerce.
+- **index.ts:** contém exemplos de utilização das funcionalidades dos módulos.
+- **produtos.ts:** cadastro, listagem, busca e filtragem de produtos.
+- **clientes.ts:** cadastro e listagem de clientes.
+- **carrinho.ts:** gerenciamento do carrinho e cálculo de valores.
+- **pedidos.ts:** finalização e consulta de pedidos.
+- **relatorios.ts:** geração de relatórios de vendas.
+- **types.ts:** definição dos tipos utilizados no sistema.
+
+## Como executar o projeto
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Compile o projeto TypeScript:
+
+```bash
+npx tsc
+```
+
+Execute o arquivo principal:
+
+```bash
+node dist/main.js
+```
+
+## Funcionalidades demonstradas
+
+- Cadastro e consulta de produtos.
+- Cadastro e consulta de clientes.
+- Busca de produtos por ID e nome.
+- Filtro de produtos por categoria.
+- Carrinho de compras e cálculo do total.
+- Finalização e consulta de pedidos.
+- Atualização do estoque.
+- Relatório de vendas.
+
 ```
 
 ## 5. Como executar
