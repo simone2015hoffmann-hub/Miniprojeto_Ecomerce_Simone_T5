@@ -1,0 +1,23 @@
+# Query: src
+# ContextLines: 1
+
+4 results - 3 archives
+
+README.md:
+  72  
+  73: O arquivo `src/index.ts` demonstra o cadastro de produtos e clientes, a inclusão de produtos no carrinho, o cálculo do valor da compra, a finalização de pedidos, a atualização do estoque e a geração do relatório de vendas.
+  74  
+
+tsconfig.json:
+   5      "module": "CommonJS",
+   6:     "rootDir": "./src",
+   7      "outDir": "./dist",
+
+  12    },
+  13:   "include": ["src/**/*.ts"]
+  14  }
+
+    "git.enableSmartCommit": true,
+   9  #	modified:   README.md
+  10: #	new file:   src/main.ts
+  11  #

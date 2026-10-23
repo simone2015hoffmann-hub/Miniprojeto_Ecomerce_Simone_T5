@@ -1,34 +1,45 @@
-# # Mini Projeto E-commerce em TypeScript
+# Mini-Avaliative Project — TypeScript E-commerce
 
- 1. Objetivo
+## 1. Identificação
 
-Desenvolver um sistema simples de gerenciamento de e-commerce utilizando TypeScript e Node.js, aplicando conceitos de programação, organização de módulos, validação de dados e controle de estoque.
+- **Projeto:** Sistema de E-commerce
+- **Estudante:** Simone Hoffmann
+- **Turma:** [Back-End Node V5]
+- **Linguagem:** TypeScript
 
-## 2. Funcionalidades
+## 2. Objetivo da aplicação
 
-- Cadastro, listagem, busca, atualização e remoção de produtos.
-- Pesquisa de produtos por nome e categoria.
-- Validação de preço, estoque e identificadores de produtos.
-- Cadastro e consulta de clientes.
-- Validação de e-mails e prevenção de cadastros duplicados.
-- Adição, alteração e remoção de itens do carrinho.
-- Cálculo de subtotais e total da compra.
-- Finalização de pedidos com validação de cliente e estoque.
-- Consulta de pedidos por cliente.
+Desenvolver um sistema de e-commerce para uma pequena loja virtual, permitindo organizar produtos, clientes, carrinho de compras, pedidos, estoque e relatórios de vendas.
+
+O projeto aplica os conceitos de TypeScript, funções tipadas, arrays, validações, módulos e compilação para JavaScript.
+
+## 3. Funcionalidades implementadas
+
+- Cadastro e listagem de produtos.
+- Busca de produtos por identificador.
+- Busca de produtos por nome.
+- Filtro de produtos por categoria.
+- Cadastro e listagem de clientes.
+- Adição e remoção de itens do carrinho.
+- Alteração da quantidade de produtos no carrinho.
+- Cálculo de subtotal e total da compra.
+- Finalização e consulta de pedidos.
+- Consulta dos pedidos de um cliente.
 - Atualização do estoque após a compra.
-- Relatório de quantidade de pedidos, faturamento e itens vendidos.
+- Geração de relatórios de vendas.
+- Testes de situações inválidas.
 
-## 3. Tecnologias utilizadas
+**Observação:** as funcionalidades devem ser conferidas nos módulos e demonstradas no `main.ts` antes da entrega.
 
-- TypeScript
-- Node.js
-- npm
-- Visual Studio Code
+## 4. Tecnologias utilizadas
 
-## 4. Estrutura do projeto
+- TypeScript — implementação das funcionalidades e tipagem dos dados.
+- Node.js — execução da aplicação.
+- npm — gerenciamento de dependências.
+- Git e GitHub — versionamento e armazenamento do projeto.
+- Visual Studio Code — ambiente de desenvolvimento.
 
-```text
-## Estrutura do Projeto
+## 5. Estrutura dos arquivos
 
 ```text
 ecommerce-typescript/
@@ -45,60 +56,29 @@ ecommerce-typescript/
 ├── package.json
 ├── package-lock.json
 ├── tsconfig.json
+├── .gitignore
 └── README.md
 ```
 
-## Arquivo principal
-
-- **main.ts:** arquivo principal de demonstração da aplicação, responsável por executar e demonstrar as funcionalidades do sistema de e-commerce.
-- **index.ts:** contém exemplos de utilização das funcionalidades dos módulos.
-- **produtos.ts:** cadastro, listagem, busca e filtragem de produtos.
-- **clientes.ts:** cadastro e listagem de clientes.
-- **carrinho.ts:** gerenciamento do carrinho e cálculo de valores.
+- **types.ts:** definição dos tipos utilizados pela aplicação.
+- **produtos.ts:** operações relacionadas aos produtos.
+- **clientes.ts:** operações relacionadas aos clientes.
+- **carrinho.ts:** gerenciamento dos itens e cálculo dos valores.
 - **pedidos.ts:** finalização e consulta de pedidos.
 - **relatorios.ts:** geração de relatórios de vendas.
-- **types.ts:** definição dos tipos utilizados no sistema.
+- **index.ts:** exemplos de utilização dos módulos.
+- **main.ts:** demonstração principal das funcionalidades do sistema.
+- **dist/:** arquivos JavaScript gerados durante a compilação.
 
-## Como executar o projeto
-
-Instale as dependências:
-
-```bash
-npm install
-```
-
-Compile o projeto TypeScript:
-
-```bash
-npx tsc
-```
-
-Execute o arquivo principal:
-
-```bash
-node dist/main.js
-```
-
-## Funcionalidades demonstradas
-
-- Cadastro e consulta de produtos.
-- Cadastro e consulta de clientes.
-- Busca de produtos por ID e nome.
-- Filtro de produtos por categoria.
-- Carrinho de compras e cálculo do total.
-- Finalização e consulta de pedidos.
-- Atualização do estoque.
-- Relatório de vendas.
-
-```
-
-## 5. Como executar
+## 6. Instalação, compilação e execução
 
 ### Pré-requisitos
 
-Instalar o Node.js.
+Instalar o Node.js e o npm.
 
 ### Instalar as dependências
+
+Na pasta principal do projeto, executar:
 
 ```bash
 npm install
@@ -110,35 +90,99 @@ npm install
 npx tsc
 ```
 
-### Executar o sistema
+### Executar a demonstração principal
 
 ```bash
-node dist/index.js
+node dist/main.js
 ```
 
-## 6. Exemplos de utilização
+A configuração do `tsconfig.json` deve gerar o arquivo `dist/main.js` a partir de `src/main.ts`.
 
-O arquivo `src/index.ts` demonstra o cadastro de produtos e clientes, a inclusão de produtos no carrinho, o cálculo do valor da compra, a finalização de pedidos, a atualização do estoque e a geração do relatório de vendas.
+## 7. Exemplos das principais operações
 
-## 7. Regras de negócio
+### Cadastro de produto
 
-- O ID de um produto ou cliente não pode ser duplicado.
-- O nome e a categoria do produto são obrigatórios.
-- O preço deve ser maior que zero.
-- O estoque não pode ser negativo.
-- O e-mail do cliente deve ser válido e não pode estar duplicado.
-- A quantidade de itens deve ser um inteiro maior que zero.
-- Não é permitido comprar mais unidades do que o estoque disponível.
-- Um pedido exige um cliente cadastrado e um carrinho com itens.
-- O estoque é atualizado após a validação dos itens do pedido.
-- O pedido mantém uma cópia dos dados dos produtos no momento da compra.
+```typescript
+cadastrarProduto({
+  id: 1,
+  nome: "Boné esportivo",
+  categoria: "Acessórios",
+  preco: 79.90,
+  estoque: 10
+});
+```
 
-## 8. Limitações conhecidas
+### Busca de produto
 
-Os dados são mantidos em memória durante a execução do programa. Ao encerrar e iniciar novamente o sistema, os cadastros e pedidos são reiniciados. O projeto não utiliza banco de dados nem possui interface gráfica.
+```typescript
+console.log(buscarProduto(1));
+console.log(buscarProdutosPorNome("boné"));
+console.log(filtrarPorCategoria("Acessórios"));
+```
 
-## 9. Identificação do estudante
+### Carrinho de compras
 
-**Estudante:** Simone Hoffmann  
-**Turma:** Turma Back-End Nodev5-Ciclo2
-2026-10-22 12:25:30.131 [info] [Janela] Auto updating outdated extensions. anthropic.claude-code2026-10-22 12:25:31.037 [info] [Janela] Auto updating outdated extensions. anthropic.claude-code2026-10-22 12:26:57.835 [info] [Alterações na nuvem] Summarizing cloud changes, reason: cloud changes enabled...2026-10-22 12:26:59.729 [info] [Alterações na nuvem] Aborting resuming edit session as no edit session content is available to be applied2026-10-22 12:27:08.951 [error] [Rede] #1: https://main.vscode-cdn.net/extensions/chat.json - error GET failed to fetch2026-10-22 12:27:16.726 [info] [Janela] [perf] Render performance baseline is 49ms2026-10-22 12:27:28.264 [error] [Rede] #28: https://main.vscode-cdn.net/core/stable.json - error GET Fetch timeout: 20000ms
+```typescript
+adicionarAoCarrinho(listarProdutos()[0], 2);
+
+console.log(listarCarrinho());
+console.log(calcularTotal().toFixed(2));
+```
+
+### Finalização de pedido
+
+```typescript
+const pedido = finalizarPedido(1);
+console.log(pedido);
+```
+
+Os exemplos pressupõem que os módulos correspondentes tenham sido importados e que os produtos e clientes necessários estejam cadastrados.
+
+## 8. Regras de negócio
+
+O sistema deve validar as operações comerciais, incluindo:
+
+- Identificadores únicos para produtos, clientes e pedidos.
+- Nome obrigatório para produtos e clientes.
+- Preço do produto maior que zero.
+- Estoque não negativo.
+- E-mail informado e não duplicado para clientes.
+- Quantidades do carrinho maiores que zero.
+- Limite de quantidade conforme o estoque disponível.
+- Atualização da quantidade quando um produto já estiver no carrinho.
+- Cálculo do subtotal pela multiplicação do preço unitário pela quantidade.
+- Cálculo do total pela soma dos subtotais.
+- Impedimento de pedidos sem itens ou associados a clientes inexistentes.
+- Verificação do estoque antes de registrar o pedido.
+- Atualização do estoque somente após a finalização bem-sucedida da compra.
+- Registro do preço praticado no momento da compra.
+
+As regras devem estar implementadas e ser verificadas nos respectivos módulos.
+
+## 9. Testes de situações inválidas
+
+A demonstração deve incluir pelo menos três situações inválidas, por exemplo:
+
+1. Cadastro de produto com preço negativo.
+2. Adição de quantidade superior ao estoque disponível.
+3. Tentativa de finalizar um pedido sem itens.
+
+Também podem ser testados produtos inexistentes, identificadores duplicados e clientes não cadastrados.
+
+Os testes devem apresentar mensagens compreensíveis no terminal e não devem interromper indevidamente a execução.
+
+## 10. Limitações conhecidas
+
+- Os dados permanecem em memória durante a execução e não são preservados automaticamente ao encerrar o programa.
+- Não há banco de dados ou interface gráfica.
+- Não são implementados pagamentos reais, frete, cupons ou cálculo de impostos.
+- A aplicação é executada pelo terminal do Node.js.
+- A implementação e a cobertura dos testes dependem das funcionalidades efetivamente presentes nos módulos.
+
+## 11. Considerações finais
+
+O projeto tem como finalidade demonstrar a aplicação dos conceitos de TypeScript no desenvolvimento de um sistema de e-commerce modular, com operações de cadastro, consulta, carrinho, pedidos, controle de estoque e relatórios.
+
+A aplicação pode ser compilada e executada localmente seguindo as instruções descritas neste documento.
+
+
